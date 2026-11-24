@@ -12,8 +12,6 @@ Last local verification: 2026-11-24. Target: arm64, macOS 13 or later.
 - Render and inspect the measurement panel and About view in light/dark modes, without invented thermal readings.
 - Package the app and the complete source/license/documentation archives.
 
-Run `python3 scripts/build.py`, then `python3 scripts/test.py`, then `python3 scripts/package.py`. GitHub Actions repeats build, tests and packaging on an arm64 macOS runner; its status is available in the repository's Actions tab.
-
 ## Hardware evidence and limits
 
 Development host: M3 Max MacBook Pro, 14 CPU cores, 36 GiB RAM, macOS 27.0.1. CPU/RAM sampling works in the restricted development environment. SMC access there returns `0xe00002e2` and no HID temperature services are accessible, so thermal decoding/selection tests use controlled inputs rather than physical sensor measurements.
