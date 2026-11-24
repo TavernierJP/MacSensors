@@ -1,0 +1,39 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macos-arm64:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify native tools
+        run: |
+          test "$(uname -m)" = arm64
+          xcrun --find swiftc
+          python3 --version
+      - name: Build and verify signature
+        run: python3 scripts/build.py
+      - name: Run measurement and selection tests
+        run: python3 scripts/test.py
+      - name: Package app and source
+        run: python3 scripts/package.py
+      - name: Save distribution archive
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: MacSensors-AppleSilicon
+          path: dist/*.zip
+          if-no-files-found: error
+          retention-days: 14

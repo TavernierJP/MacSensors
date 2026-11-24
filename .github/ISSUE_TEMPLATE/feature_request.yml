@@ -1,0 +1,10 @@
+name: Feature request / Proposer une amélioration
+description: Suggest a focused improvement to MacSensors.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: Describe the use case and the behavior you would find helpful. French or English is welcome.
+    validations:
+      required: true

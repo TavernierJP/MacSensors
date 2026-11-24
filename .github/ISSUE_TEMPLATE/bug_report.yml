@@ -1,0 +1,30 @@
+name: Bug report / Signaler un problème
+description: Report incorrect behavior, a missing reading or a suspicious sensor label.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: MacSensors version
+      placeholder: '1.2'
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Mac model, chip and macOS version
+      description: No serial number or Apple account details are needed.
+      placeholder: MacBook Pro, M3 Max, macOS 27.0.1
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include steps to reproduce. French or English is welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: sensors
+    attributes:
+      label: Sensor details or screenshots (optional)
+      description: Include key/name and whether raw channels were enabled. Review diagnostics for private information before posting.
