@@ -65,4 +65,4 @@ Automatic mode prefers the identified CPU reading `TCMb`, then `TCMz`, then avai
 
 Bug reports, translations and carefully documented hardware mappings are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) and [technical references](REFERENCES.md).
 
-Released under the [MIT License](LICENSE). Copyright © 2026 TavernierJP. The app was developed with AI assistance; TavernierJP is the project owner and design credit. The repository contains its own implementation, without bundled code or resources from Parallels Toolbox.
+Released under the [MIT License](LICENSE). Copyright © 2026 TavernierJP. The app was developed with AI assistance; TavernierJP is the project owner and design credit. The repository contains its own implementation.
