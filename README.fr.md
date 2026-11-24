@@ -59,32 +59,9 @@ Si aucune température n’est sélectionnée, les lectures thermiques périodiq
 
 L’ouverture à la connexion est facultative et désactivée par défaut. Installer l’application dans Applications avant de l’activer.
 
-## Sources et reconstruction
-
-Le fichier `MacSensors-Sources-1.2.zip` contient le code Swift, un petit pont C pour les interfaces matérielles, les scripts Python de compilation et les tests. Il ne contient aucun code ni ressource de Parallels ou de ChatGPT.
-
-Reconstruction sur un Mac Apple Silicon avec Python 3, les outils Apple en ligne de commande (`xcode-select --install`) et le SDK macOS :
-
-```sh
-python3 scripts/build.py
-python3 scripts/test.py
-python3 scripts/package.py
-```
-
-L’application compilée se trouve dans `.build/MacSensors.app`. Le paquet se trouve dans `dist` ou dans le dossier donné en argument au script de préparation. Aucun téléchargement de dépendance n’est nécessaire pour la construction.
-
-Diagnostics utilisant les mêmes lecteurs que l’application :
-
-```sh
-.build/MacSensors.app/Contents/MacOS/MacSensors --sample
-.build/MacSensors.app/Contents/MacOS/MacSensors --sensors
-```
-
-Les diagnostics ne collectent ni compte Apple, ni numéro de série, ni donnée réseau. Les contrôles réellement exécutés et leurs limites sont décrits dans `VALIDATION.md`.
-
 ## Désinstallation
 
-Désactiver l’ouverture à la connexion si elle était activée, quitter MacSensors et supprimer `MacSensors.app`. Les préférences utilisent l’identifiant `local.tavernierjp.macsensors`.
+Désactiver l’ouverture à la connexion si elle était activée, quitter MacSensors et supprimer `MacSensors.app`.
 
 ## Correction 1.2
 
