@@ -18,6 +18,3 @@
 ## 1.1 — 2026-11-21
 
 - Add selectable SMC/HID temperature readings to the CPU/RAM utility.
-- Rename the app to MacSensors and add the `designed by TavernierJP` About window.
-
-The permissive temperature enumeration in 1.1 is superseded by the conservative filtering in 1.2. A numeric SMC key is not sufficient evidence of a physical temperature reading.
