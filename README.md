@@ -38,7 +38,7 @@ These are offscreen renders of the real interface. The rendering environment can
 
 Xcode and Python are not needed to use the compiled app. The distributed app is ad hoc signed, without an Apple Developer ID certificate or notarization. macOS may require approval in **System Settings → Privacy & Security → Open Anyway** after the first attempted launch. Check the release source and checksum before approving it.
 
-To uninstall, disable launch at login if enabled, quit MacSensors, and remove the app. Preferences use `local.tavernierjp.macsensors`.
+To uninstall, disable launch at login if enabled, quit MacSensors, and remove the app.
 
 ## Select temperatures
 
