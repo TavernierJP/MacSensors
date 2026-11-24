@@ -48,38 +48,6 @@ Automatic mode prefers the identified CPU reading `TCMb`, then `TCMz`, then avai
 
 **Afficher les relevés SMC non identifiés (avancé)** reveals raw channels for investigation. They have no confirmed temperature unit, are not converted to Fahrenheit and are excluded from summaries. Values such as `1` or a plausible `91.1` do not establish that a key is a physical temperature sensor.
 
-## Build from source
-
-Install Apple's Command Line Tools (`xcode-select --install`) and Python 3. A full Xcode installation is also supported. Build on an Apple Silicon Mac with the macOS SDK available through `xcrun`:
-
-```sh
-git clone https://github.com/tavernierjipi-ship-it/MacSensors.git
-cd MacSensors
-python3 scripts/build.py
-python3 scripts/test.py
-python3 scripts/package.py
-```
-
-The app is created in `.build/MacSensors.app`; distribution archives are written to `dist/`. No dependencies are downloaded by these scripts. Packaging includes the complete source, license and documentation. `python3 scripts/package.py --dmg` additionally requests a DMG from the host's disk image service.
-
-Diagnostics use the same readers as the app:
-
-```sh
-.build/MacSensors.app/Contents/MacOS/MacSensors --sample
-.build/MacSensors.app/Contents/MacOS/MacSensors --sensors
-```
-
-To render previews without opening a menu bar session:
-
-```sh
-.build/MacSensors.app/Contents/MacOS/MacSensors --preview .build/preview-light.png
-.build/MacSensors.app/Contents/MacOS/MacSensors --preview .build/preview-dark.png --dark
-.build/MacSensors.app/Contents/MacOS/MacSensors --preview .build/about-light.png --about
-.build/MacSensors.app/Contents/MacOS/MacSensors --preview .build/about-dark.png --about --dark
-```
-
-GitHub Actions builds, runs the tests and packages the app on an Apple Silicon macOS runner. CI cannot validate physical temperature probes in a virtual machine.
-
 ## Source layout
 
 | Path | Purpose |
